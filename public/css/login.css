@@ -1,0 +1,118 @@
+body{
+    font-family: 'Merriweather', sans-serif;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background: url(https://images.unsplash.com/photo-1716903904403-20a28f5afb88?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+}
+
+.content{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.content-Logo{
+    display: flex;
+    position: absolute;
+    top: 25px;
+}
+
+.content-loginBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    width: 310px;
+    height: 260px;
+    backdrop-filter: brightness(0.6);
+    border-radius: 10px;
+    box-shadow: 2px 4px 8px 5px rgb(45 40 40 / 80%);;
+    padding: 20px;
+    position:relative;
+
+}
+
+.formLoginBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.formLoginBox input[type="email"],
+.formLoginBox input[type="password"] {
+    width: 100%;
+    height: 10%;
+    font-size: 15px;
+    color: white;
+    background-color: transparent;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 22px;
+    border: 1px solid rgb(255 255 255 / 58%);
+}
+
+.formLoginBox input[type="email"]::placeholder,
+.formLoginBox input[type="password"]::placeholder {
+    color: white;
+}
+
+.formLoginBox input[type="email"]:focus,
+.formLoginBox input[type="password"]:focus{
+    border: none;
+    outline-style: dashed;
+}
+
+.formLoginBox a{
+    color: rgba(246, 245, 243, 0.947);
+    margin: 22px;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.formLoginBox input[type="submit"]{
+    background: #a9a6a657;
+    color: white;
+    font-weight: 900;
+    margin: 15px;  
+    padding: 11px;
+    border-radius: 22px;
+    border: none;
+    width: 50%;
+    cursor: pointer;
+}
+
+.formLoginBox input[type="submit"]:active{
+    background-color: gray;
+}
+
+.content-linkSignup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    bottom: 55px;
+    width: 150px;
+}
+.content-linkSignup button{
+    background: #a9a6a657;
+    color: white;
+    font-weight: 900;
+    margin: 10px;
+    padding: 11px;
+    border-radius: 22px;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+}
+.content-linkSignup button:active{
+    background-color: gray;
+}

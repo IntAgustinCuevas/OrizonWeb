@@ -1,0 +1,92 @@
+:root{
+    --primary-color: rgb(255, 255, 255);
+    --secundary-color: rgb(10, 175, 24);
+    --terciary-color: rgba(103, 99, 99, 0.609); 
+}
+
+body{
+    font-family: 'Merriweather', sans-serif;
+    background: url(https://images.unsplash.com/photo-1716903904403-20a28f5afb88?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--primary-color);
+}
+
+.content{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.formSignup{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    backdrop-filter: brightness(0.6);
+    width: 400px;
+    padding: 20px 30px;
+    position: absolute;
+    top: 40px;
+    border-radius: 10px;
+    box-shadow: 2px 4px 8px 5px rgb(45 40 40 / 80%);
+}
+.formSignup p {
+    padding-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+.formSignup input[type="text"],
+.formSignup input[type="email"],
+.formSignup input[type="password"] {
+    
+    width: 100%;
+    height: 100%;
+    font-size: 15px;
+    color: white;
+    background: transparent;
+    margin-bottom: 25px;
+    padding: 10px 15px;
+    border-radius: 13px;
+    border: 1px solid rgb(255 255 255 / 58%);
+    outline: none;
+}
+.formSignup input[type="text"]::placeholder,
+.formSignup input[type="email"]::placeholder,
+.formSignup input[type="password"]::placeholder {
+    color: white;
+}
+.formSignup input[type="submit"] {
+    width: 50%;
+    font-family: 'Merriweather';
+    font-weight: 900;
+    color: white;
+    background: #a9a6a657;
+    padding: 13px 0px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+.formSignup input[type="submit"]:active{
+    background: #ffffff57;
+}
+
+.content-footer{
+    display: flex;
+    flex-direction:column;
+    width: 186px;
+    height: 68px;
+    position: absolute;
+    bottom: 45px;
+}
+.content-footer img{
+    width: 100%;
+    height: 100%;
+}
