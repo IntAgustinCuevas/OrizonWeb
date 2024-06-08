@@ -45,3 +45,5 @@ Thumbs.db
 *.wmv
 
 #Personal ignore
+notas.txt
+.env
