@@ -16,6 +16,11 @@ const validationMiddleware = {
             .isLength( { min:6 , max: 30 }).withMessage('La contraseña debe contener entre 6 y 30 caracteres')
             .matches(/\d/).withMessage('La contraseña debe contener al menos un numero')
             .matches(/[a-z]/).withMessage('La contraseña debe contener al menos una letra'),
+        body ('clientCode')
+            .trim().notEmpty().withMessage('Necesitas un codigo de cliente para registrarte')
+            .isLength({ max:5 }).withMessage('Formato de codigo invalido')
+            .matches(/\d/).withMessage('Formato de codigo invalido')
+            .matches(/[A-Z]/).withMessage('Formato de codigo invalido'),
 
             (req, res, next) => {
 
@@ -29,3 +34,5 @@ const validationMiddleware = {
             }
         ]
 }
+
+export default validationMiddleware;
