@@ -3,7 +3,7 @@ import { body, validationResult} from 'express-validator';
 const validationMiddleware = {
 
     validationSignUp: () => [
-        body ('usarName')
+        body ('userName')
             .trim().notEmpty().withMessage('Este campo es obligatorio')
             .isString().withMessage('Introduccir un valor correcto (Solo letras)')
             .isLength({ min:3 , max:30 }).withMessage('Introduccir un minimo de 3 caracteres y un maximo de 30'),
