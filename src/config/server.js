@@ -7,7 +7,6 @@ dotenv.config();
 connectDB();
 
 // variables de entorno //
-
 const PORT = process.env.PORT;
 
 app.listen( PORT , () => {
