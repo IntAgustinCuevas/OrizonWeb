@@ -64,6 +64,7 @@ body{
     color: white;
 }
 .formSignup input[type="submit"] {
+    
     width: 50%;
     font-family: 'Merriweather';
     font-weight: 900;
