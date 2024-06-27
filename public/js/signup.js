@@ -18,68 +18,77 @@ document.addEventListener('DOMContentLoaded' , () => {
             repeatPassword: repeatPassword,
             clientCode: clientCode
         }
+        //console.log(formData);
 
-        console.log(formData);
+        if(validateForm()){
 
-        fetch('http://localhost:8080/api/users/register', {
-            
-            method: 'POST',
-            body: JSON.stringify(formData),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-        .then (response => {
-            if (response.ok){
-                alert('Usuario registrado correctamente.');
-                setTimeout(() => {
-                    window.location.href = '/view/login';
-                }, 3000);
-            }
-            else{
-                return response.text().then(errorData => {
-                    throw new Error(errorData);
-                });
-            }
-        })
-        .catch (error => {
-            console.error('### ERROR: ', error);
-            alert(`Error en el registro de usuario: ${error.message}`);
-        })        
+            fetch('http://localhost:8080/api/users/register', {
+                
+                method: 'POST',
+                body: JSON.stringify(formData),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then (response => {
+                if (response.ok){
+                    alert('Usuario registrado correctamente.');
+                    setTimeout(() => {
+                        window.location.href = '/view/login';
+                    }, 3000);
+                }
+                else{
+                    return response.text().then(errorData => {
+                        throw new Error(errorData);
+                    });
+                }
+            })
+            .catch (error => {
+                console.error('### ERROR: ', error);
+                alert(`Error en el registro de usuario: ${error.message}`);
+            })        
+        }
     })
 })
 
 
-//function validateForm() {
-    /*
+//Funcion para validar los datos del formulario.
+function validateForm() {   
     // Obtener los valores de los campos del formulario
-    let name = document.getElementById("name").value;
+    let userName = document.getElementById("userName").value;
     let email = document.getElementById("email").value;
     let password = document.getElementById("password").value;
     let repeatPassword = document.getElementById("repeatPassword").value;
+    let clientCode = document.getElementById("clientCode").value;
 
-    let nameFormat = /^[a-zA-Z]+$/;
+    let userNameRegex = /^[a-zA-Z]+$/;
+    let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/;
+    let passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]+$/;
+    let clientCodeRegex = /^(AA|BB)\d{3}$/;
 
     // Validar los datos del formulario
-    if ( name.length >= 3 && nameFormat.test(name.trim()) ) {
-        alert("Nombre de usuario incorrecto. (Solamente letras, minimo 3 letras.");
+    if ( userName.length < 3 || userName.length > 30 || !userNameRegex.test(userName.trim()) ) {
+        alert("Nombre de usuario incorrecto. Solamente letras, minimo 3 letras maximo 30.");
         return false;
     }
-    /*if (email.trim() === "") {
+    if ( !emailRegex.test(email.trim())) {
         alert("Por favor, introduce un correo electrónico");
         return false;
     }
-    if (password.trim() === "") {
-        alert("Por favor, introduce una contraseña");
+    if ( password.length < 6 || !passwordRegex.test(password.trim()) ) {
+        alert("La contraseña debe tener al menos 6 caracteres. Al menos una 1 letra y 1 numero");
         return false;
     }
-    if (password.length < 6) {
-        alert("La contraseña debe tener al menos 6 caracteres");
+    if( password != repeatPassword ){
+        alert("Las contraseñas no coinciden");
+        return false;    
+    }
+    if( !clientCodeRegex.test(clientCode.trim()) ){
+        alert("El codigo de cliente es invalido");
         return false;
     }
-    // Puedes agregar más validaciones según tus requisitos
-    
+
     // Si todas las validaciones pasan, devolver true
-    return true;*/
-//}
+    return true;
+}
 
