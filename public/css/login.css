@@ -32,9 +32,8 @@ body{
     backdrop-filter: brightness(0.6);
     border-radius: 10px;
     box-shadow: 2px 4px 8px 5px rgb(45 40 40 / 80%);;
-    padding: 20px;
+    padding: 35px 25px 5px;
     position:relative;
-
 }
 
 .formLoginBox{
@@ -49,12 +48,12 @@ body{
 .formLoginBox input[type="email"],
 .formLoginBox input[type="password"] {
     width: 100%;
-    height: 10%;
+    height: 100%;
     font-size: 15px;
     color: white;
     background-color: transparent;
-    margin-bottom: 10px;
-    padding: 8px;
+    margin-bottom: 17px;
+    padding: 12px;
     border-radius: 22px;
     border: 1px solid rgb(255 255 255 / 58%);
 }
@@ -71,6 +70,7 @@ body{
 }
 
 .formLoginBox a{
+    height: 100%;
     color: rgba(246, 245, 243, 0.947);
     margin: 22px;
     font-size: 14px;
@@ -82,10 +82,11 @@ body{
     color: white;
     font-weight: 900;
     margin: 15px;  
-    padding: 11px;
+    padding: 12px;
     border-radius: 22px;
     border: none;
     width: 50%;
+    height: 100%;
     cursor: pointer;
 }
 
@@ -107,10 +108,11 @@ body{
     color: white;
     font-weight: 900;
     margin: 10px;
-    padding: 11px;
+    padding: 15px;
     border-radius: 22px;
     border: none;
     width: 100%;
+    height: 100%;
     cursor: pointer;
 }
 .content-linkSignup button:active{
