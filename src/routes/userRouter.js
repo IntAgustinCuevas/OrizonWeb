@@ -6,5 +6,6 @@ const userRouter = express.Router();
 
 // Endpoint for register new user //
 userRouter.post('/register', validationMiddleware.validationSignUp() ,userController.createUser);
+userRouter.post('/login' , userController.loginUser);
 
 export default userRouter;

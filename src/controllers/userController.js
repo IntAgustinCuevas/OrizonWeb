@@ -53,6 +53,42 @@ const userController = {
         catch (error){
             res.status(500).json({ message: 'Error interno del servidor', error: error.message});
         }
+    },
+
+    loginUser: async (req , res) => {
+        const { email, password } = req.body;
+
+        try{
+            let checkUser = await User.findOne( {email: email} );
+
+            if(!checkUser){
+                return res.status(400).json({message: 'Email o contraseña incorrecto.'});
+            }
+
+            let comparePassword = await bcrypt.compare(password , checkUser.password);
+
+            if(!comparePassword){
+                return res.status(400).json({message: 'Email o contraseña incorrecto.'})
+            }
+
+            let token = jwt.sign(
+                {
+                    email: checkUser.email,
+                    userName: checkUser.userName,
+                    userType: checkUser.userType
+                },
+                process.env.SECRET_KEY
+            );
+
+            checkUser.token = token;
+            await checkUser.save();
+
+            return res.status(200).json({message: 'Inicio de sesion correcto', token: token, user: checkUser});
+        }
+        catch (error) {
+            console.error(error);
+            return res.status(500).json({message: 'Error en el servidor', error: error.message});
+        }
     }
 } 
 
