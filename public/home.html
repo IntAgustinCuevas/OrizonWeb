@@ -5,50 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OrizonWeb</title>
     <link rel="stylesheet" href="css/home.css">
+    <script src="js/home.js"></script>
 </head>
 <body>
-    <!-- Barra de navegación -->
-    <nav class="nav-bar">
-        <div class="nav-content">
-            <img src="https://www.orizon.com.ar/img/logo_barra.png" alt="logoOrizon" class="nav-logo">
-            <div class="nav-list">
-                <img src="img/cart-icon.png" alt="cart-icon">
-                <img src="img/home-icon.png" alt="cart-icon">
-                <img src="img/menu-icon.png" alt="cart-icon">
-            </div>
-        </div>
-    </nav>
+    <!-- Menu emergente -->
+    <div class="nav-menu" id="nav-menu">
 
-    <!-- Listado de productos -->
-    <section class="products">
-        <div class="content">
-            <h2>Productos</h2>
-            <div class="product-list">
-                <div class="product-item">
-                    <img src="images/agua.jpg" alt="Agua Mineral">
-                    <h3>Agua Mineral</h3>
-                    <button>Añadir al carrito</button>
-                </div>
-                <div class="product-item">
-                    <img src="images/gaseosa.jpg" alt="Gaseosa">
-                    <h3>Gaseosa</h3>
-                    <button>Añadir al carrito</button>
-                </div>
-                <div class="product-item">
-                    <img src="images/jugo.jpg" alt="Jugo">
-                    <h3>Jugo</h3>
-                    <button>Añadir al carrito</button>
-                </div>
-                <!-- Añade más productos según sea necesario -->
-            </div>
-        </div>
-    </section>
+        <img src="img/cross-icon.png" alt="cross-icon" id="cross-icon">
 
-    <!-- Pie de página -->
-    <footer class="footer">
-        <div class="container">
-            <p>Contacto: contacto@mercaderia.com | Tel: 123-456-7890</p>
-        </div>
-    </footer>
+        <ul>
+            <li><a href="./home.html">Inicio</a></li>
+            <li><a href="#">Productos</a></li>
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </div>
+
+    <div class="content-darkened" id="content-darkened"></div>
+
+    <div class="content" id="content">
+        <!-- Barra de navegación -->
+        <nav class="nav-bar">
+            <div class="nav-content">
+                <img src="https://www.orizon.com.ar/img/logo_barra.png" alt="logoOrizon" class="nav-logo">
+                <div class="nav-list">
+                    <img src="img/cart-icon.png" alt="cart-icon" id="cart-icon">
+                    <img src="img/home-icon.png" alt="home-icon" id="home-icon">
+                    <img src="img/menu-icon.png" alt="menu-icon" id="menu-icon">
+                </div>
+            </div>
+        </nav>
+    
+        <!-- Listado de productos -->
+        <section class="products">
+            <div class="prod-content">
+                <h2>Productos</h2>
+                <div class="product-list">
+                    <div class="product-item">
+                        <img src="images/agua.jpg" alt="Agua Mineral">
+                        <h3>Agua Mineral</h3>
+                        <button>Añadir al carrito</button>
+                    </div>
+                    <div class="product-item">
+                        <img src="images/gaseosa.jpg" alt="Gaseosa">
+                        <h3>Gaseosa</h3>
+                        <button>Añadir al carrito</button>
+                    </div>
+                    <div class="product-item">
+                        <img src="images/jugo.jpg" alt="Jugo">
+                        <h3>Jugo</h3>
+                        <button>Añadir al carrito</button>
+                    </div>
+                    <div class="product-item">
+                        <img src="images/jugo.jpg" alt="Jugo">
+                        <h3>Jugo</h3>
+                        <button>Añadir al carrito</button>
+                    </div>
+                    <div class="product-item">
+                        <img src="images/jugo.jpg" alt="Jugo">
+                        <h3>Jugo</h3>
+                        <button>Añadir al carrito</button>
+                    </div>
+                    <div class="product-item">
+                        <img src="images/jugo.jpg" alt="Jugo">
+                        <h3>Jugo</h3>
+                        <button>Añadir al carrito</button>
+                    </div>
+                    <!-- Añade más productos según sea necesario -->
+                </div>
+            </div>
+        </section>
+    
+        <!-- Pie de página -->
+        <footer class="footer">
+            <div class="container">
+                <p>Contacto: contacto@mercaderia.com | Tel: 123-456-7890</p>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>
